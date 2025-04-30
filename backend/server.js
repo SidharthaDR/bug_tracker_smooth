@@ -25,13 +25,6 @@ app.get('/api/issues', (req, res) => {
 });
 
 // Add new issue
-/*app.post('/api/issues', (req, res) => {
-    const issues = readIssues();
-    const newIssue = { id: Date.now(), ...req.body };
-    issues.push(newIssue);
-    writeIssues(issues);
-    res.status(201).json(newIssue);
-});*/
 
 app.post('/api/issues', (req, res) => {
     const issues = readIssues();
