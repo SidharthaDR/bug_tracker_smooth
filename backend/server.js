@@ -25,13 +25,29 @@ app.get('/api/issues', (req, res) => {
 });
 
 // Add new issue
-app.post('/api/issues', (req, res) => {
+/*app.post('/api/issues', (req, res) => {
     const issues = readIssues();
     const newIssue = { id: Date.now(), ...req.body };
     issues.push(newIssue);
     writeIssues(issues);
     res.status(201).json(newIssue);
-});
+});*/
+
+app.post('/api/issues', (req, res) => {
+    const issues = readIssues();
+    const newIssue = {
+      id: Date.now(),
+      title: req.body.title,
+      description: req.body.description,
+      priority: req.body.priority,
+      status: req.body.status,
+      timestamp: new Date().toISOString()
+    };
+    issues.push(newIssue);
+    writeIssues(issues);
+    res.status(201).json(newIssue);
+  });
+  
 
 // Delete issue
 app.delete('/api/issues/:id', (req, res) => {
@@ -42,3 +58,23 @@ app.delete('/api/issues/:id', (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+app.put('/api/issues/:id', (req, res) => {
+    const issues = readIssues();
+    const issueId = parseInt(req.params.id);
+  
+    const updatedIssues = issues.map(issue => {
+      if (issue.id === issueId) {
+        return {
+          ...issue,
+          title: req.body.title,
+          description: req.body.description,
+          priority: req.body.priority,
+          status: req.body.status,
+        };
+      }
+      return issue;
+    });
+    writeIssues(updatedIssues);
+  res.json({ message: 'Bug updated' });
+});

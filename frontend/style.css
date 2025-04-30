@@ -11,10 +11,16 @@ body {
   }
 
   button{
-    border:#b83f3f solid 2px;
-    background-color: #b83f3f;
+    border: none;
+    /* background-color: #b83f3f; */
+    background-color: #db4b4b;
     border-radius: 30px;
     color: aliceblue;
+  }
+
+  button:hover{
+    /* background-color: #db4b4b; */
+    background-color: #b83f3f;
   }
 
   li {
@@ -36,7 +42,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
+    /* justify-content: center; */
   }
 
   input{
@@ -56,3 +63,5 @@ body {
     height: auto;
     /* height: 300px; */
   }
+
+

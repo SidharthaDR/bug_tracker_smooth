@@ -7,9 +7,27 @@
 <body>
   <h1>Bug Tracker</h1>
   <form id="issueForm">
+    <input type="hidden" id="bugId"> <!-- Hidden input -->
+
     <input type="text" id="title" placeholder="Bug title" required>
-    <input type="text" id="description" placeholder="Bug description" data-autosize-input='{ "space": 10 }'  required>
-    <button type="submit">Add Bug</button>
+    <input type="text" id="description" placeholder="Bug description" data-autosize-input='{ "space": 10 }' required>
+
+    <select id="priority" required>
+        <option value="">Select priority</option>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <select id="status" required>
+        <option value="">Select status</option>
+        <option value="Open">Open</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Resolved">Resolved</option>
+      </select>
+
+    <!-- <button type="submit">Add Bug</button> -->
+    <button type="submit">Save</button>
   </form>
   <ul id="issueList"></ul>
   <script src="app.js"></script>
