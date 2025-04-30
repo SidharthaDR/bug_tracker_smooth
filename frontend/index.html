@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bug Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Bug Tracker</h1>
+  <form id="issueForm">
+    <input type="text" id="title" placeholder="Bug title" required>
+    <input type="text" id="description" placeholder="Bug description" data-autosize-input='{ "space": 10 }'  required>
+    <button type="submit">Add Bug</button>
+  </form>
+  <ul id="issueList"></ul>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+body {
+    
+    font-family: Arial;
+    padding: 20px;
+    background-color: antiquewhite;
+  }
+
+  input, button {
+    margin: 5px;
+    padding: 8px;
+  }
+
+  button{
+    border:#b83f3f solid 2px;
+    background-color: #b83f3f;
+    border-radius: 30px;
+    color: aliceblue;
+  }
+
+  li {
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  #issueForm {
+    display: flex;
+    justify-content: center;
+  }
+
+  #issueForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input{
+
+  width: 200px;
+  min-width: 200px;
+  max-width: 300px;
+  transition: width 0.25s;    
+  }
+
+  #title{
+    width: 300px;
+  }
+  #description{
+    display: flex;
+    width: 300px;
+    height: auto;
+    /* height: 300px; */
+  }
